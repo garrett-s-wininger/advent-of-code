@@ -1,0 +1,14 @@
+{
+  "name": "2",
+  "version": "1.0.0",
+  "description": "Solution to AoC 2015 question 2",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Garrett Wininger",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
