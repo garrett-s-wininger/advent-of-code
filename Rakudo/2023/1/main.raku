@@ -5,14 +5,14 @@ if (@*ARGS.elems != 1) {
     exit 1;
 }
 
-my $input_file := shift @*ARGS;
+my $input_file = shift @*ARGS;
 
 if (!$input_file.IO.e) {
     say "$($input_file) does not exist";
     exit 1;
 }
 
-my $challenge_input := slurp $input_file;
+my $challenge_input = slurp $input_file;
 my $lines := split / \n /, $challenge_input;
 my @vals = ();
 
