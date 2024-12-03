@@ -1,4 +1,4 @@
-System.argv
+processed_data = System.argv
 |> hd
 |> File.read
 |> elem(1)
@@ -12,5 +12,9 @@ System.argv
   fn [x, y], {left, right} -> 
     {List.insert_at(left, 0, x), List.insert_at(right, 0, y)}
   end)
-|> Day1.total_distance
-|> IO.inspect
+
+IO.puts("===== PART 1 =====")
+IO.inspect(Day1.total_distance(processed_data))
+
+IO.puts("\n===== PART 2 =====")
+IO.inspect(Day1.similarity_score(processed_data))

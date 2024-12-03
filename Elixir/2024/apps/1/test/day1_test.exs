@@ -17,4 +17,25 @@ defmodule Day1Test do
       }
     ) == 11
   end
+
+  test "calculates number of occurrances in array" do
+    assert Map.equal?(
+      Day1.occurrances([4, 3, 5, 3, 9, 3]),
+      %{
+        4 => 1,
+        3 => 3,
+        5 => 1,
+        9 => 1
+      }
+    )
+  end
+
+  test "calculates similarity score between lists" do
+    assert Day1.similarity_score(
+      {
+         [3, 4, 2, 1, 3, 3],
+         [4, 3, 5, 3, 9, 3]
+      }
+    ) == 31
+  end
 end
