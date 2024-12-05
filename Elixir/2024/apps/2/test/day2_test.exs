@@ -27,6 +27,16 @@ defmodule Day2Test do
     ) == [2, 3, 1, 2]
   end
 
+  test "determines ability to dampen failure correctly" do
+    assert Day2.can_make_safe?([7, 6, 4, 2, 1]) == true
+    assert Day2.can_make_safe?([1, 3, 2, 4, 5]) == true
+    assert Day2.can_make_safe?([8, 6, 4, 4, 1]) == true
+    assert Day2.can_make_safe?([1, 3, 6, 7, 9]) == true
+
+    assert Day2.can_make_safe?([1, 2, 7, 8, 9]) == false
+    assert Day2.can_make_safe?([9, 7, 6, 2, 1]) == false
+  end
+
   test "determines safe levels correctly" do
     assert Day2.is_safe?([7, 6, 4, 2, 1]) == true
     assert Day2.is_safe?([1, 3, 6, 7, 9]) == true

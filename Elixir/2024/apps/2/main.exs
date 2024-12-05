@@ -1,4 +1,4 @@
-System.argv
+data = System.argv
 |> hd
 |> File.read!
 |> String.split("\n")
@@ -11,6 +11,15 @@ System.argv
     values,
     &String.to_integer/1)
   end)
+
+IO.puts("===== PART 1 =====")
+data
 |> Enum.filter(&Day2.is_safe?/1)
 |> Enum.count
-|> IO.inspect(charlists: false)
+|> IO.inspect
+
+IO.puts("\n===== PART 2 =====")
+data
+|> Enum.filter(&Day2.can_make_safe?/1)
+|> Enum.count
+|> IO.inspect

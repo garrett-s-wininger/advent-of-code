@@ -16,6 +16,26 @@ defmodule Day2 do
     )
   end
 
+  def splice_out_indicies([]), do: []
+  def splice_out_indicies([_head]), do: []
+
+  def splice_out_indicies(values) when is_list(values) do
+    splice_out_indicies(values, 0, Enum.count(values), [])
+  end
+
+  defp splice_out_indicies(values, index, max, acc) when is_list(values) do
+    if index == max do
+      acc
+    else
+      splice_out_indicies(
+        values,
+        index + 1,
+        max,
+        List.insert_at(acc, 0, List.pop_at(values, index) |> elem(1))
+      )
+    end
+  end
+
   def is_safe?([]), do: false
   def is_safe?([_head]), do: false
 
@@ -29,6 +49,17 @@ defmodule Day2 do
       Enum.any?(differences, fn val -> abs(val) > 3 end) -> false
       Enum.any?(differences, fn val -> abs(val) < 1 end) -> false
       true -> true
+    end
+  end
+
+  def can_make_safe?([]), do: false
+  def can_make_safe?([_head]), do: false
+
+  def can_make_safe?(values) when is_list(values) do
+    if is_safe?(values) do
+      true
+    else
+      Enum.any?(splice_out_indicies(values), &is_safe?/1)
     end
   end
 end
