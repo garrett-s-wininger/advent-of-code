@@ -18,4 +18,11 @@ defmodule Day3Test do
     assert Day3.parse("?(12,34)") == []
     assert Day3.parse("mul ( 2 , 4 )") == []
   end
+
+  test "properly handles conditionals" do
+    assert Day3.parse(
+      "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))",
+      conditonals: true
+    ) == [{2,4}, {8,5}]
+  end
 end
