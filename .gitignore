@@ -1,6 +1,7 @@
 # Generated Build System (Make)
 Makefile
 C/**/Makefile
+CPP/**/Makefile
 x86_64/**/Makefile
 
 # AoC Executables
