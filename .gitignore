@@ -1,0 +1,14 @@
+# Generated Build System (Make)
+Makefile
+C/**/Makefile
+x86_64/**/Makefile
+
+# AoC Executables
+**/day_[0-9]
+**/day_1[0-9]
+**/day_2[0-5]
+
+# CMake Outputs
+**/*.cmake
+**/CMakeCache.txt
+**/CMakeFiles/

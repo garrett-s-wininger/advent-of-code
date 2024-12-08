@@ -1,5 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
-project(advent_of_code)
+project(advent_of_code_x86)
 enable_language(ASM)
 
 add_subdirectory(2022)
