@@ -1,0 +1,7 @@
+# Generated Build System
+Makefile
+
+# CMake Outputs
+*.cmake
+CMakeCache.txt
+CMakeFiles/
