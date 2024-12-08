@@ -2,6 +2,7 @@
 Makefile
 C/**/Makefile
 CPP/**/Makefile
+Fortran/**/Makefile
 x86_64/**/Makefile
 
 # AoC Executables

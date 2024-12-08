@@ -3,4 +3,5 @@ project(advent_of_code)
 
 add_subdirectory(C)
 add_subdirectory(CPP)
+add_subdirectory(Fortran)
 add_subdirectory(x86_64)
