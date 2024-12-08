@@ -50,7 +50,7 @@ _read_line:
 	cmp $4, %rax
 	je _print_read_line
 	jmp _end
-	
+
 _print_read_line:
 	# We're reading in a fixed format, replace newline with null
 	lea current_line(%rip), %rax
@@ -76,7 +76,7 @@ _print_read_line:
 	lea total_score(%rip), %rdi
 	call puts
 	jmp _read_line
-	
+
 _end:
 	pop %r13
 	pop %r12
@@ -174,4 +174,3 @@ exit_failure:
 	mov $60, %rax
 	mov $1, %rdi
 	syscall
-

@@ -1,6 +1,6 @@
 # Advent of Code
 
-This repository contains the source code as written for my attempts of the 
+This repository contains the source code as written for my attempts of the
 [Advent of Code](https://adventofcode.com) challenge which is held annually.
 The source directory structure is split into a few levels. First, we have the
 various programming languages in which I have attempted solutions. Second, we

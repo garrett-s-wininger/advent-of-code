@@ -9,7 +9,7 @@ processed_data = System.argv
   fn [x, y] -> [elem(Integer.parse(x), 0), elem(Integer.parse(y), 0)] end)
 |> Enum.reduce(
   {[], []},
-  fn [x, y], {left, right} -> 
+  fn [x, y], {left, right} ->
     {List.insert_at(left, 0, x), List.insert_at(right, 0, y)}
   end)
 

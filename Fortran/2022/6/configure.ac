@@ -3,4 +3,3 @@ AM_INIT_AUTOMAKE([subdir-objects])
 AC_PROG_FC
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
-

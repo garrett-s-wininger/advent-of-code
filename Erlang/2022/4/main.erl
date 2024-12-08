@@ -7,17 +7,16 @@ is_overlapping(_) -> false.
 
 main(FileName) ->
 	{ok, Data} = file:read_file(FileName),
-	
-	Lines = [X || 
+
+	Lines = [X ||
 		 X <- binary:split(Data, [<<"\n">>], [global]), byte_size(X) > 0],
-	
+
 	RangeStrings = [binary:split(X, [<<",">>]) || X <- Lines],
-	
-	Ranges = [binary:split(lists:nth(1, X), [<<"-">>]) ++ binary:split(lists:nth(2, X), [<<"-">>]) || 
+
+	Ranges = [binary:split(lists:nth(1, X), [<<"-">>]) ++ binary:split(lists:nth(2, X), [<<"-">>]) ||
 		  X <- RangeStrings],
 
 	IntegerRanges = [[list_to_integer(binary_to_list(Y)) || Y <- X] || X <- Ranges],
 	Overlapping = [X || X <- IntegerRanges, is_overlapping(X)],
-	
-	io:format("Found ~p overlapping ranges.~n", [length(Overlapping)]).
 
+	io:format("Found ~p overlapping ranges.~n", [length(Overlapping)]).

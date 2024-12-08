@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
   size_t read = 0;
   unsigned int sum = 0;
   unsigned int max = 0;
-  
+
   if (argc != 2) {
     fprintf(stderr, "Expected one argument, for file path\n");
     return EXIT_FAILURE;
@@ -43,4 +43,3 @@ int main(int argc, char **argv) {
   fclose(file);
   return EXIT_SUCCESS;
 }
-

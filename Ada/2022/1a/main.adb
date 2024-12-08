@@ -15,7 +15,7 @@ begin
     else
         Input_File_Path := To_Unbounded_String (Argument (1));
         Open (File => Input_File, Mode => In_File, Name => To_String (Input_File_Path));
-        
+
         while not End_Of_File (Input_File) loop
             declare
                 Line: String := Get_Line (Input_File);

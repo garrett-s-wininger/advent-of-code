@@ -197,7 +197,7 @@ defmodule Day3 do
               )
             }
           }
-        char when char in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] -> 
+        char when char in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] ->
           case state do
             %{lhs: nil} -> parse_mul(
               input,

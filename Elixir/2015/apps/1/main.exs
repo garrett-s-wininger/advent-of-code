@@ -3,7 +3,7 @@
 System.argv()
 |> hd
 |> File.read!
-|> String.graphemes() 
+|> String.graphemes()
 |> Enum.reduce(0, fn char, acc ->
     case char do
       "(" -> acc + 1

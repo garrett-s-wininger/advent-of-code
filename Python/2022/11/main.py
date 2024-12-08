@@ -7,9 +7,9 @@ from typing import Callable, List, TextIO
 
 class Monkey:
     def __init__(
-        self, 
-        items: List[int], 
-        operation: Callable[[int], int], 
+        self,
+        items: List[int],
+        operation: Callable[[int], int],
         test: Callable[[int], int]
     ) -> None:
         self.inspection_count = 0
@@ -51,8 +51,8 @@ def read_monkeys(input_file: TextIO) -> List[Monkey]:
         definition = lines[x:x+7]
         monkeys.append(
             Monkey(
-                parse_items(definition[1]), 
-                parse_operation(definition[2]), 
+                parse_items(definition[1]),
+                parse_operation(definition[2]),
                 parse_test(definition[3:6])
             )
         )
@@ -77,9 +77,9 @@ if __name__ == "__main__":
             monkey.items = []
 
     top_inspections = sorted(
-        [monkey.inspection_count for monkey in monkeys], 
-        key=lambda x: x, 
+        [monkey.inspection_count for monkey in monkeys],
+        key=lambda x: x,
         reverse=True
     )
-    
+
     print(f"Total Monkey Business: {top_inspections[0] * top_inspections[1]}")

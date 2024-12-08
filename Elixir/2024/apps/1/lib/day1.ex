@@ -16,7 +16,7 @@ defmodule Day1 do
     Enum.reduce(
       numbers,
       %{},
-      fn number, acc -> 
+      fn number, acc ->
         if !Map.has_key?(acc, number) do
           Map.merge(acc, %{number => 1})
         else

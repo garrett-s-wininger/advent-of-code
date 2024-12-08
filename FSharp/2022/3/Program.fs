@@ -2,7 +2,7 @@
 
 let readRucksacks (filePath: string) = seq {
     use sr = new StreamReader(filePath)
-    
+
     while not sr.EndOfStream do
         yield sr.ReadLine ()
 }
@@ -14,7 +14,7 @@ let itemToPriority (item: char) =
     if int item >= int 'a' && int item <= int 'z' then int item - lowerCaseSubValue
     elif int item >= int 'A' && int item <= int 'Z' then int item - upperCaseSubValue
     else failwith "itemToPriority provided with a value outside the range of a-z or A-Z"
-     
+
 let matchItems ((left, right): string*string) =
     List.filter (fun item -> List.contains item (Seq.toList right)) (Seq.toList left) |> Set.ofList
 
@@ -24,13 +24,13 @@ let main args =
 
     let rucksackCompartments = readRucksacks(args[0]) |> Seq.map (fun ruck ->
         let splitIdx = (ruck.Length / 2) - 1
-        
+
         (ruck[0..splitIdx], ruck[splitIdx + 1..])
-    ) 
-    
+    )
+
     let sharedItems = rucksackCompartments |> Seq.map (fun compartmentPair ->
         matchItems(compartmentPair)
-    ) 
+    )
 
     let priorities = sharedItems |> Seq.map (fun sharedItemSet ->
         sharedItemSet |> Set.map (fun sharedItem ->
@@ -47,4 +47,3 @@ let main args =
     printfn "Total sum: %d" totalSum
 
     0
-

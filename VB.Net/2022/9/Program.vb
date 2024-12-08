@@ -10,7 +10,7 @@ Module Program
 
         IsConnected = overlapping Or northSouthConnection Or eastWestConnection Or diagonalConnection
     End Function
-    
+
     Sub Main(args As String())
         If args.Length() <> 1
             Console.Error.WriteLine("Usage: dotnet run <filename>")
@@ -23,13 +23,13 @@ Module Program
         Dim visited as HashSet(Of (Integer, Integer)) = New HashSet(Of (Integer, Integer))
 
         visited.Add(tailPosition)
-    
+
         Using reader As StreamReader = New StreamReader(args(0))
             Dim line as String = reader.ReadLine
 
             Do While (Not line Is Nothing)
-                Dim commandInput As String() = line.Split({" "c}) 
-                
+                Dim commandInput As String() = line.Split({" "c})
+
                 For i = 1 To Val(commandInput(1))
                     headLastPosition = headPosition
 

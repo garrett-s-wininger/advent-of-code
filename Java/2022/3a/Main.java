@@ -19,7 +19,7 @@ public class Main {
 
         Files.lines(filepath).forEach(line -> {
             currentLine.incrementAndGet();
-            
+
             switch (currentLine.intValue() % 3) {
                 case 1:
                     rucksackGroup[0] = line;
@@ -32,7 +32,7 @@ public class Main {
 
                     for (Character character : rucksackGroup[0].toCharArray()) {
                         if (
-                            rucksackGroup[1].indexOf(character) != -1 && 
+                            rucksackGroup[1].indexOf(character) != -1 &&
                             rucksackGroup[2].indexOf(character) != -1
                         ) {
                             if (character >= 'a') {

@@ -1,6 +1,6 @@
 program main
   implicit none
-  
+
   character(len=256) :: path
   character(len=:), allocatable :: datastream
   integer :: fsize, fu, i, ios, j, k
@@ -14,7 +14,7 @@ program main
 
   open(access="stream", form="unformatted", file=path, iostat=ios, &
        status="old", action="read", newunit=fu)
-  
+
   if (ios /= 0) then
     stop "Could not open requested file"
   end if
@@ -23,7 +23,7 @@ program main
   allocate(character(len=fsize) :: datastream)
 
   read(unit=fu, iostat=ios) datastream
-  
+
   if (ios /= 0) then
     stop "Could not read file contents"
   end if
@@ -34,10 +34,10 @@ program main
     do j = 0, 3
       do k = 0, 3
         if (j == k) cycle
-        
+
         if (datastream(i+j:i+j) == datastream(i+k:i+k)) then
           duplicate = .TRUE.
-        end if    
+        end if
       end do
     end do
 
@@ -50,4 +50,3 @@ program main
   close(9)
 
 end program main
-

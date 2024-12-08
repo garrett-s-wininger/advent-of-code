@@ -6,7 +6,7 @@ function directory_size(array $directory): int {
     $total_size = 0;
 
     foreach ($files as $file) {
-        $total_size += $file["size"];   
+        $total_size += $file["size"];
     }
 
     foreach ($subdirs as $subdir) {
@@ -24,7 +24,7 @@ function sizes_below_threshold(array $directory, int $threshold, array &$accumul
     }
 
     $top_level_size = directory_size($directory);
-    
+
     if ($top_level_size <= $threshold) {
         $accumulator[] = $top_level_size;
     }
@@ -95,4 +95,3 @@ sizes_below_threshold($filesystem, 100_000, $threshold_sizes);
 echo "Total: " . array_sum($threshold_sizes) . "\n";
 
 ?>
-

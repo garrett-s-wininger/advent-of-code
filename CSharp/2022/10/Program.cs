@@ -44,7 +44,7 @@ using (StreamReader reader = new StreamReader(args[0]))
     while ((line = reader.ReadLine()) != null)
     {
         string[] instructionComponents = line.Split(" ");
-        
+
         if (instructionComponents[0] == "noop")
         {
             noop(ref cycle, ref signal, register);

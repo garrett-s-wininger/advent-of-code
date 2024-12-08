@@ -18,4 +18,3 @@ src/.dirstamp
 # Build outputs
 main
 src/*.o
-
